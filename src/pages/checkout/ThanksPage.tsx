@@ -1,7 +1,7 @@
-export function ShopPage() {
+export function ThanksPage() {
     return (
         <>
-            <h1 className="title">SHOP</h1>
+            <h1 className="title">THANK YOU</h1>
             <div>
                 content here...
             </div>

@@ -1,46 +1,33 @@
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
+import { ShopPage } from "./pages/shop/ShopPage"
+import { CartPage } from "./pages/cart/CartPage"
+import { CheckoutPage } from "./pages/checkout/CheckoutPage"
+import { ThanksPage } from "./pages/checkout/ThanksPage"
+import { LoginPage } from "./pages/login/LoginPage"
+import { CMSPage } from "./pages/cms/CMSPage"
+import { CMSProductsPage } from "./pages/cms/products/CMSProductsPage"
+import { CMSOrderPage } from "./pages/cms/orders/CMSOrdersPage"
+
 function App() {
     return (
-        <div className="page">
-          <div className="title">Home</div>
-          <table className="table-auto w-full hover">
-            <thead>
-            <tr>
-                <th>Song</th>
-                <th>Artist</th>
-                <th>Year</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                <td>Malcolm Lockyer</td>
-                <td>1961</td>
-            </tr>
-            <tr>
-                <td>Witchy Woman</td>
-                <td>The Eagles</td>
-                <td>1972</td>
-            </tr>
-            <tr>
-                <td>Shining Star</td>
-                <td>Earth, Wind, and Fire</td>
-                <td>1975</td>
-            </tr>
-            </tbody>
-        </table>
-          <div>
-            <input type="text" />
-            <input className="error" type="number" />
-            <input type="password" />
-            <input type="email" />
-            <textarea></textarea>
+        <BrowserRouter>
+          <div className="page">
+            <Routes>
+              <Route path="shop" element={<ShopPage/>}></Route>
+              <Route path="cart" element={<CartPage/>}></Route>
+              <Route path="checkout" element={<CheckoutPage/>}></Route>
+              <Route path="thankyou" element={<ThanksPage/>}></Route>
+              <Route path="login" element={<LoginPage/>}></Route>
+              <Route path="cms" element={<CMSPage/>}>
+                <Route path="products" element={<CMSProductsPage/>}></Route>
+                <Route path="orders" element={<CMSOrderPage/>}></Route>
+                <Route index element={<Navigate to="products"/>}></Route>
+              </Route>
+            <Route path="*" element={<Navigate to="shop"/>}></Route>
+            </Routes>
+
           </div>
-          <button className="btn">Default</button>
-          <button className="btn" disabled>Disabled</button>
-          <button className="btn dark">Dark default</button>
-          <button className="btn danger">Danger default</button>
-          <button className="btn primary">Primary default</button>
-        </div>
+        </BrowserRouter>
     )
 }
 

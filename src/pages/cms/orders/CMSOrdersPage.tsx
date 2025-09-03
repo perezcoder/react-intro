@@ -1,7 +1,7 @@
-export function ShopPage() {
+export function CMSOrderPage() {
     return (
         <>
-            <h1 className="title">SHOP</h1>
+            <h1 className="title">CMS ORDER</h1>
             <div>
                 content here...
             </div>
