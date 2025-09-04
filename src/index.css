@@ -64,6 +64,9 @@ input[type="email"].error {
 .btn.danger {
   @apply bg-red-400 hover:bg-red-500 text-white
 }
+.btn.accent {
+  @apply bg-pink-300 hover:bg-pink-500 text-black
+}
 .btn.primary {
   @apply bg-white hover:bg-sky-200 text-black
 }
