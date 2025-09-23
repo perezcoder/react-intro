@@ -1,7 +1,11 @@
 import { NavLink } from "react-router-dom";
 import logo from '../../../assets/logo.png';
+import { CartPanel } from "./CartPanel";
+import { useCartPanel } from "@/services/Cart/useCartPanel";
 
 export function NavBar() {
+    const isCartPanelOpened = useCartPanel(state => state.open);
+    const toggleCartPanel = useCartPanel(state => state.toggle);
 
     const isActive = (obj: {isActive: boolean}) => obj.isActive ? 'text-xl text-sky-500 font-bold' : ''
 
@@ -13,8 +17,13 @@ export function NavBar() {
                     <NavLink to="shop" className={isActive}>Shop</NavLink>
                 </div>
                 <div>
-                    <button className="btn accent lg">Cart: 0</button>
+                    <button className="btn accent lg" onClick={toggleCartPanel}>
+                        Cart: 0
+                    </button>
                 </div>
+
+                { isCartPanelOpened && <CartPanel/>}
+
                 <div className="fixed bottom-2 right-2 p-5">
                     <NavLink to="login" className="btn accent lg">Login</NavLink>
                     <NavLink to="cms" className="btn accent lg">CMS</NavLink>
