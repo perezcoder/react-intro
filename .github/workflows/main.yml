@@ -32,9 +32,9 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ftp.marcoperez.it
-          username: admin@marcoperez.it
+          username: perez@marcoperez.it
           password: FriDomBret1981!
           port: 21
           protocol: ftp
           local-dir: dist/   # o "build", dipende dal tuo framework
-          server-dir: /public_html/
+          server-dir: /
