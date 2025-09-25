@@ -1,4 +1,7 @@
 ---
 deployment:
   tasks:
+    - npm install
     - npm run build
+    - export DEPLOYPATH=/home/xwdzmwic/public_html/
+    - /dist -R images $DEPLOYPATH
