@@ -37,4 +37,4 @@ jobs:
           port: 21
           protocol: ftp
           local-dir: dist/   # o "build", dipende dal tuo framework
-          server-dir: /public_html
+          server-dir: /public_html/
