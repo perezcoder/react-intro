@@ -4,4 +4,4 @@ deployment:
     - /home/xwdzmwic/nodeenv/nodejs-22.17.0/22/bin/npm install
     - /home/xwdzmwic/nodeenv/nodejs-22.17.0/22/bin/npm run build
     - export DEPLOYPATH=/home/xwdzmwic/public_html/
-    - /bin/cp -R dist2/* $DEPLOYPATH
+    - cd dist /bin/cp -R / $DEPLOYPATH
