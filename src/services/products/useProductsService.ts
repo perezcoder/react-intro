@@ -13,7 +13,7 @@ export function useProductsService() {
       const res = await ProductsApi.getProducts();
       dispatch({ type: 'productsGetSuccess', payload: res.items})
     } catch (e) {
-        console.log(e)
+        console.log('eeee',e)
         dispatch({ type: 'error', payload: 'Products not loaded' })
     }
 }
@@ -53,7 +53,7 @@ async function deleteProduct(id: string) {
     }
   }
 
-  function setActiveItem(product: Product) {
+  function setActiveItem(product: Partial<Product>) {
     dispatch({ type: 'productSetActive', payload: product  })
   }
 
